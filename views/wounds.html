@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>window.$ = window.jQuery = require('jquery');</script>
+    <style media="screen">
+      div{
+    color: #fff;
+    font-family: Tahoma, Verdana, Segoe, sans-serif;
+    padding: 10px;
+}
+      label {
+        float: left;
+        padding: 0 1em;
+        text-align: center;
+      }
+
+      .container{
+          background-color:#2E4272;
+          display:flex;
+      }
+      .fixed{
+          background-color:#4F628E;
+          width: 100px;
+      }
+      .flex-item{
+          background-color:#7887AB;
+          flex-grow: 1;
+      }
+      .button {
+  background-color: #2E4272;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+    </style>
+  </head>
+<body>
+  <div class="container">
+    <div class="fixed">
+      <label for="locations">Hit Location:</label><br>
+        <select class="locations" name="locations" id="locations">
+          <option value="Upper Head">Upper Head</option>
+        </select>
+    </div>
+    <div class="fixed">
+      <label for="damageTypes">Damage Type:</label><br>
+        <select class="locations" name="locations" id="damageTypes">
+          <option value="1">Cutting</option>
+          <option value="2">Piercing</option>
+          <option value="3">Bludgeoning</option>
+          <option value="4">Unarmed</option>
+        </select>
+    </div>
+      <div class="flex-item">
+        <label for="woundsRadio">Wound Level</label><br>
+        <div class="woundsRadio">
+          <label for="wound1">1<br />
+            <input type="radio" id="wound1" name="wound" value="1" />
+          </label>
+
+          <label for="wound2">2<br />
+            <input type="radio" id="wound2" name="wound" value="2" />
+          </label>
+
+          <label for="wound3">3<br />
+            <input type="radio" id="wound3" name="wound" value="3" />
+          </label>
+
+          <label for="wound4">4<br />
+            <input type="radio" id="wound4" name="wound" value="4" />
+          </label>
+
+          <label for="wound5">5<br />
+            <input type="radio" id="wound5" name="wound" value="5" />
+          </label>
+        </div>
+        </div>
+<div class="flex-item">
+  <br>
+  <button type="button" class="button" name="lookup" onclick="lookup()">Lookup</button>
+</div>
+  </div>
+  <div class="container">
+    <div class="fixed" id="resultsStats">
+      <p id="stun">Stun:</p>
+      <br>
+      <p id="pain">Pain:</p>
+      <br>
+      <p id="bleed">Bleed:</p>
+      <br>
+    </div>
+<div class="flex-item" id="resultsSpecial">
+  <label for="resultsSpecialp">Special</label>
+  <p id="resultsSpecialp"></p>
+</div>
+  </div>
+  <script type="text/javascript">
+    $( document ).ready( () => {
+      populateBodyParts();
+    })
+    function lookup() {
+      let location = $("#locations").val();
+      let woundLevel = $('input[name="wound"]:checked').val();
+      let damageType = $("#damageTypes").val() - 1;
+      console.log(`Looked up ${location} + ${woundLevel} + ${damageType}`);
+      let wound = woundLookup(location, damageType, woundLevel);
+      console.log(wound);
+      fillResults(wound.stun, wound.pain, wound.bleed, wound.special);
+    }
+    function populateBodyParts() {
+      let $dropdown = $("#locations");
+      let parts = getAllParts();
+      console.log(parts);
+      $.each(parts, (index, value) => {
+        $dropdown.append($("<option />").val(value).text(value));
+      })
+    }
+    function fillResults(stun, pain, bleed, special) {
+      $("#stun").text("Stun: " + stun);
+      $("#pain").text("Pain: " + pain);
+      $("#bleed").text("Bleed: " + bleed);
+      $("#resultsSpecialp").text(special);
+    }
+  </script>
+  <script src="../src/renderer.js"></script>
+</body>
