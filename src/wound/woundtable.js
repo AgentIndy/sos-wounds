@@ -27,31 +27,36 @@ var table = [
       stun: 0,
       pain: 7,
       bleed: 1,
-      special: ["Big fuckies", "From", "McSuckies"]
+      special: ["-"],
+      description: "Shallow cut on scalp. Not serious."
     },
     { //upper head, cutting, l2
       stun: 2,
       pain: 9,
       bleed: 3,
-      special: []
+      special: ["-"],
+      description: "Deep cut on scalp. Blood runs into face."
     },
     { //upper head, cutting, l3
       stun: 4,
       pain: 13,
       bleed: 5,
-      special: []
+      special: ["KO vs 4 RS"],
+      description: "Cracked skull. Nearly invisible cut, but devastating."
     },
     { //upper head, cutting, l4
       stun: "total",
       pain: "total",
       bleed: 8,
-      special: []
+      special: ["Auto-KO", "Miracle Surgery vs Brain Damage", "Internal Bleeding"],
+      description: "Severe skull fracture. Brain damage. Unconscious."
     },
     { //upper head, cutting, l5
       stun: "dead",
       pain: "dead",
       bleed: "dead",
-      special: []
+      special: ["Dead"],
+      description: "Blade cleaves through the skull. Dead."
     }
   ],
   [ //piercing
@@ -59,31 +64,36 @@ var table = [
       stun: 0,
       pain: 4,
       bleed: 0,
-      special: []
+      special: ["-"],
+      description: "Raking glance to the side of the head."
     },
     { //upper head, piercing, l2
       stun: 1,
       pain: 6,
       bleed: 3,
-      special: []
+      special: ["-"],
+      description: "Deeper rake across the scalp. Lots of blood."
     },
     { //upper head, piercing, l3
       stun: 2,
       pain: 10,
       bleed: 5,
-      special: []
+      special: ["KO vs 3 RS"],
+      description: "Skull cracked. May lose consciousness."
     },
     { //upper head, piercing, l4
       stun: "total",
       pain: "total",
       bleed: 20,
-      special: []
+      special: ["Auto-KO", "Surgery vs Brain Damage", "Internal Bleeding"]
     },
     { //upper head, piercing, l5
       stun: "dead",
       pain: "dead",
       bleed: "dead",
-      special: []
+      special: ["Dead"],
+      description: ["Point penetrates straight through skull. Dead."]
+      
     }
   ],
   [ //bludgeoning
@@ -91,31 +101,36 @@ var table = [
       stun: 1,
       pain: 4,
       bleed: 1,
-      special: []
+      special: ["-"],
+      description: "Blow to the side of the head. Oww."
     },
     { //upper head, bludgeoning, l2
       stun: 3,
       pain: 6,
       bleed: 2,
-      special: []
+      special: ["KO vs 1 RS"],
+      description: "Temple is glanced. May lose consciousness."
     },
     { //upper head, bludgeoning, l3
       stun: 5,
       pain: 8,
       bleed: 4,
-      special: []
+      special: ["KO vs 5 RS"],
+      description: "Skull fracture. May lose consciousness."
     },
     { //upper head, bludgeoning, l4
       stun: "total",
       pain: "total",
       bleed: 6,
-      special: []
+      special: ["Auto-KO", "Surgery vs Brain Damage", "Internal Bleeding"],
+      description:"Skull shatters. Unconscious."
     },
     { //upper head, bludgeoning, l5
       stun: "dead",
       pain: "dead",
       bleed: "dead",
-      special: []
+      special: ["Dead"],
+      description:"Skull crushed. Brain and bone everywhere. Dead."
     }
   ],
   [ //unarmed
@@ -123,31 +138,36 @@ var table = [
       stun: 0,
       pain: 0,
       bleed: 0,
-      special: []
+      special: ["-"],
+      description:"Blow to the forehead. Negligible effect."
     },
     { //upper head, unarmed, l2
       stun: 0,
       pain: 0,
       bleed: 0,
-      special: []
+      special: ["-"],
+      description:"Slight graze. Painful."
     },
     { //upper head, unarmed, l3
       stun: 1,
       pain: 1,
       bleed: 0,
-      special: []
+      special: ["KO vs 1 RS"],
+      description:"Hard blow. May lose consciousness."
     },
     { //upper head, unarmed, l4
       stun: 3,
       pain: 3,
       bleed: 0,
-      special: []
+      special: ["KO vs 3 RS"],
+      description:"Straight blow to temple. Probably unconscious."
     },
     { //upper head, unarmed, l5
       stun: "total",
       pain: 10,
       bleed: 3,
-      special: []
+      special: ["Auto-KO", "Internal Bleeding"],
+      description:"Fracturing blow to temple. Possible brain damage."
     }
   ]
 ],
@@ -157,31 +177,36 @@ var table = [
       stun: 1,
       pain: 6,
       bleed: 1,
-      special: []
+      special: ["-"],
+      description:"Cut across the chin or lips. May leave a scar."
     },
     { //face, cutting, l2
       stun: 2,
       pain: 8,
       bleed: 3,
-      special: []
+      special: ["-"],
+      description: "Deeper cut that will scar chin, lip, cheek, or brow."
     },
     { //face, cutting, l3
       stun: 4,
       pain: 16,
       bleed: 8,
-      special: []
+      special: ["Surgery vs One-Eyed"],
+      description:"Slash catches eye! Severe damage. May lose eye."
     },
     { //face, cutting, l4
       stun: 6,
       pain: 20,
       bleed: 18,
-      special: []
+      special: ["Surgery vs One-Eyed OR FacialDeformity", "Infection +2"],
+      description: "Face bisected, extreme damage to jaw, teeth, and skull. May lose eye (1-5) or nose (6-10)."
     },
     { //face, cutting, l5
       stun: "dead",
       pain: "dead",
       bleed: "dead",
-      special: []
+      special: ["Dead"],
+      description:"Head cloven through to the teeth. Dead."
     }
   ]
   [ //piercing
@@ -189,31 +214,36 @@ var table = [
       stun: 1,
       pain: 5,
       bleed: 1,
-      special: []
+      special: ["-"],
+      description:"Facial scratch."
     },
     { //face, piercing, l2
       stun: 2,
       pain: 6,
       bleed: 2,
-      special: []
+      special: ["-"],
+      description:"Point glances facial bones. Mild bleeding."
     },
     { //face, piercing, l3
       stun: 3,
       pain: 8,
       bleed: 3,
-      special: []
+      special: ["-"],
+      description:"Point hits, but fails to penetrate facial bone."
     },
     { //face, piercing, l4
       stun: 5,
       pain: 15,
       bleed: 10,
-      special: []
+      special: ["Surgery vs Mute OR One-Eyed OR +5 bleed"],
+      description:"Point penetrates through mouth (1-3) eye (4-6) or facial bones (7-10.) Lots of bleeding, very painful."
     },
     { //face, piercing, l5
       stun: "dead",
       pain: "dead",
       bleed: "dead",
-      special: []
+      special: ["Dead"],
+      description:"Head impaled. Dead."
     }
   ],
   [ //bludgeoning
@@ -221,31 +251,36 @@ var table = [
       stun: 2,
       pain: 4,
       bleed: 0,
-      special: []
+      special: ["-"],
+      description:"Blow to the jaw, head rolls with it well."
     },
     { //face, bludgeoning, l2
       stun: 3,
       pain: 5,
       bleed: 2,
-      special: []
+      special: ["-"],
+      description:"Firmer blow, blood in mouth, may lose tooth."
     },
     { //face, bludgeoning, l3
       stun: 5,
       pain: 8,
       bleed: 3,
-      special: []
+      special: ["KO vs 3 RS"],
+      description:"Serious damage to jaw, may lose consciousness."
     },
     { //face, bludgeoning, l4
       stun: 7,
       pain: 12,
       bleed: 7,
-      special: []
+      special: ["KO vs 5 RS", "Mute until healed"],
+      description:"Broken jaw, almost certainly unconscious."
     },
     { //face, bludgeoning, l5
       stun: "dead",
       pain: "dead",
       bleed: "dead",
-      special: []
+      special: ["Dead"],
+      description:"Jaw smashed, skull shattered, neck broken. Dead."
     }
   ]
   [ //unarmed
@@ -253,31 +288,36 @@ var table = [
       stun: 1,
       pain: 0,
       bleed: 0,
-      special: []
+      special: ["-"],
+      description:"Grazing blow."
     },
     { //face, unarmed, l2
       stun: 2,
       pain: 0,
       bleed: 0,
-      special: []
+      special: ["-"],
+      description:"Firmer blow, might leave a bruise."
     },
     { //face, unarmed, l3
       stun: 3,
       pain: 2,
       bleed: 0,
-      special: []
+      special: ["KO vs 2 RS"],
+      description:"Hard hit, and swelling! May lose consciousness."
     },
     { //face, unarmed, l4
       stun: 4,
       pain: 10,
       bleed: 3,
-      special: []
+      special: ["KO vs 5 RS"],
+      description:"Broken nose or eye socket. Probably unconscious."
     },
     { //face, unarmed, l5
       stun: "total",
       pain: 15,
       bleed: 3,
-      special: []
+      special: ["Auto-KO"],
+      description:"Perfect hit. broken nose, lost teeth. Unconscious."
     }
   ]
 ],
@@ -287,31 +327,36 @@ var table = [
       stun: 1,
       pain: 6,
       bleed: 1,
-      special: []
+      special: [],
+      description:""
     },
     { //lower head, cutting, l2
       stun: 2,
       pain: 8,
       bleed: 4,
-      special: []
+      special: [],
+      description:""
     },
     { //lower head, cutting, l3
       stun: 3,
       pain: 12,
       bleed: 8,
-      special: []
+      special: [],
+      description:""
     },
     { //lower head, cutting, l4
       stun: 4,
       pain: 18,
       bleed: 12,
-      special: []
+      special: [],
+      description:""
     },
     { //lower head, cutting, l5
       stun: "dead",
       pain: "dead",
       bleed: "dead",
-      special: []
+      special: [],
+      description:""
     }
   ]
   [ //piercing
@@ -319,31 +364,36 @@ var table = [
       stun: 0,
       pain: 4,
       bleed: 2,
-      special: []
+      special: [],
+      description:""
     },
     { //lower head, piercing, l2
       stun: 1,
       pain: 6,
       bleed: 4,
-      special: []
+      special: [],
+      description:""
     },
     { //lower head, piercing, l3
       stun: 2,
       pain: 9,
       bleed: 8,
-      special: []
+      special: [],
+      description:""
     },
     { //lower head, piercing, l4
       stun: 3,
       pain: 14,
       bleed: 14,
-      special: []
+      special: [],
+      description:""
     },
     { //lower head, piercing, l5
       stun: "dead",
       pain: "dead",
       bleed: "dead",
-      special: []
+      special: [],
+      description:""
     }
   ],
   [ //bludgeoning
@@ -351,31 +401,36 @@ var table = [
       stun: 2,
       pain: 3,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //lower head, bludgeoning, l2
       stun: 4,
       pain: 4,
       bleed: 1,
-      special: []
+      special: [],
+      description:""
     },
     { //lower head, bludgeoning, l3
       stun: 6,
       pain: 6,
       bleed: 3,
-      special: []
+      special: [],
+      description:""
     },
     { //lower head, bludgeoning, l4
       stun: 8,
       pain: 10,
       bleed: 4,
-      special: []
+      special: [],
+      description:""
     },
     { //lower head, bludgeoning, l5
       stun: "dead",
       pain: "dead",
       bleed: "dead",
-      special: []
+      special: [],
+      description:""
     }
   ]
   [ //unarmed
@@ -383,31 +438,36 @@ var table = [
       stun: 2,
       pain: 0,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //lower head, unarmed, l2
       stun: 3,
       pain: 0,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //lower head, unarmed, l3
       stun: 5,
       pain: 2,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //lower head, unarmed, l4
       stun: 10,
       pain: 5,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //lower head, unarmed, l5
       stun: "total",
       pain: 15,
       bleed: 3,
-      special: []
+      special: [],
+      description:""
     }
   ]
 ],
@@ -417,31 +477,36 @@ var table = [
       stun: 1,
       pain: 4,
       bleed: 4,
-      special: []
+      special: [],
+      description:""
     },
     { //neck, cutting, l2
       stun: 2,
       pain: 8,
       bleed: 6,
-      special: []
+      special: [],
+      description:""
     },
     { //neck, cutting, l3
       stun: 3,
       pain: 12,
       bleed: 12,
-      special: []
+      special: [],
+      description:""
     },
     { //neck, cutting, l4
       stun: 5,
       pain: 14,
       bleed: 20,
-      special: []
+      special: [],
+      description:""
     },
     { //neck, cutting, l5
       stun: "dead",
       pain: "dead",
       bleed: "dead",
-      special: []
+      special: [],
+      description:""
     }
   ],
   [ //piercing
@@ -449,31 +514,36 @@ var table = [
       stun: 1,
       pain: 5,
       bleed: 6,
-      special: []
+      special: [],
+      description:""
     },
     { //neck, piercing, l2
       stun: 2,
       pain: 5,
       bleed: 10,
-      special: []
+      special: [],
+      description:""
     },
     { //neck, piercing, l3
       stun: 3,
       pain: 8,
       bleed: 20,
-      special: []
+      special: [],
+      description:""
     },
     { //neck, piercing, l4
       stun: 5,
       pain: 12,
       bleed: 25,
-      special: []
+      special: [],
+      description:""
     },
     { //neck, piercing, l5
       stun: "dead",
       pain: "dead",
       bleed: "dead",
-      special: []
+      special: [],
+      description:""
     }
   ]
   [ //bludgeoning
@@ -481,31 +551,36 @@ var table = [
       stun: 2,
       pain: 2,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //neck, bludgeoning, l2
       stun: 4,
       pain: 3,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //neck, bludgeoning, l3
       stun: 6,
       pain: 6,
       bleed: 3,
-      special: []
+      special: [],
+      description:""
     },
     { //neck, bludgeoning, l4
       stun: "total",
       pain: "total",
       bleed: 7,
-      special: []
+      special: [],
+      description:""
     },
     { //neck, bludgeoning, l5
       stun: "dead",
       pain: "dead",
       bleed: "dead",
-      special: []
+      special: [],
+      description:""
     }
   ],
   [ //unarmed
@@ -513,31 +588,36 @@ var table = [
       stun: 1,
       pain: 0,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //neck, unarmed, l2
       stun: 1,
       pain: 0,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //neck, unarmed, l3
       stun: 3,
       pain: 2,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //neck, unarmed, l4
       stun: 5,
       pain: 5,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //neck, unarmed, l5
       stun: "total",
       pain: 15,
       bleed: 3,
-      special: []
+      special: [],
+      description:""
     }
   ]
 ],
@@ -547,31 +627,36 @@ var table = [
       stun: 0,
       pain: 4,
       bleed: 1,
-      special: []
+      special: [],
+      description:""
     },
     { //shoulder, cutting, l2
       stun: 0,
       pain: 6,
       bleed: 3,
-      special: []
+      special: [],
+      description:""
     },
     { //shoulder, cutting, l3
       stun: 1,
       pain: 12,
       bleed: 6,
-      special: []
+      special: [],
+      description:""
     },
     { //shoulder, cutting, l4
       stun: 2,
       pain: 14,
       bleed: 8,
-      special: []
+      special: [],
+      description:""
     },
     { //shoulder, cutting, l5
       stun: "dead",
       pain: "dead",
       bleed: "dead",
-      special: []
+      special: [],
+      description:""
     }
   ],
   [ //piercing
@@ -579,31 +664,36 @@ var table = [
       stun: 0,
       pain: 3,
       bleed: 2,
-      special: []
+      special: [],
+      description:""
     },
     { //shoulder, piercing, l2
       stun: 0,
       pain: 5,
       bleed: 5,
-      special: []
+      special: [],
+      description:""
     },
     { //shoulder, piercing, l3
       stun: 1,
       pain: 9,
       bleed: 7,
-      special: []
+      special: [],
+      description:""
     },
     { //shoulder, piercing, l4
       stun: 2,
       pain: 12,
       bleed: 12,
-      special: []
+      special: [],
+      description:""
     },
     { //shoulder, piercing, l5
       stun: 5,
       pain: 15,
       bleed: 20,
-      special: []
+      special: [],
+      description:""
     }
   ],
   [ //bludgeoning
@@ -611,31 +701,36 @@ var table = [
       stun: 2,
       pain: 3,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //shoulder, bludgeoning, l2
       stun: 4,
       pain: 5,
       bleed: 2,
-      special: []
+      special: [],
+      description:""
     },
     { //shoulder, bludgeoning, l3
       stun: 6,
       pain: 6,
       bleed: 4,
-      special: []
+      special: [],
+      description:""
     },
     { //shoulder, bludgeoning, l4
       stun: 8,
       pain: 10,
       bleed: 5,
-      special: []
+      special: [],
+      description:""
     },
     { //shoulder, bludgeoning, l5
       stun: 12,
       pain: 15,
       bleed: 12,
-      special: []
+      special: [],
+      description:""
     }
   ],
   [ //unarmed
@@ -643,31 +738,36 @@ var table = [
       stun: 0,
       pain: 0,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //shoulder, unarmed, l2
       stun: 0,
       pain: 0,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //shoulder, unarmed, l3
       stun: 1,
       pain: 3,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //shoulder, unarmed, l4
       stun: 2,
       pain: 8,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //shoulder, unarmed, l5
       stun: 8,
       pain: 18,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     }
   ]
 ],
@@ -677,31 +777,36 @@ var table = [
       stun: 0,
       pain: 4,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //chest, cutting, l2
       stun: 1,
       pain: 5,
       bleed: 2,
-      special: []
+      special: [],
+      description:""
     },
     { //chest, cutting, l3
       stun: 2,
       pain: 10,
       bleed: 5,
-      special: []
+      special: [],
+      description:""
     },
     { //chest, cutting, l4
       stun: 3,
       pain: 15,
       bleed: 20,
-      special: []
+      special: [],
+      description:""
     },
     { //chest, cutting, l5
       stun: "dead",
       pain: "dead",
       bleed: "dead",
-      special: []
+      special: [],
+      description:""
     }
   ],
   [ //piercing
@@ -709,31 +814,36 @@ var table = [
       stun: 0,
       pain: 3,
       bleed: 2,
-      special: []
+      special: [],
+      description:""
     },
     { //chest, piercing, l2
       stun: 1,
       pain: 4,
       bleed: 4,
-      special: []
+      special: [],
+      description:""
     },
     { //chest, piercing, l3
       stun: 3,
       pain: 7,
       bleed: 6,
-      special: []
+      special: [],
+      description:""
     },
     { //chest, piercing, l4
       stun: 4,
       pain: 14,
       bleed: 25,
-      special: []
+      special: [],
+      description:""
     },
     { //chest, piercing, l5
       stun: "dead",
       pain: "dead",
       bleed: "dead",
-      special: []
+      special: [],
+      description:""
     }
   ],
   [ //bludgeoning
@@ -741,31 +851,36 @@ var table = [
       stun: 1,
       pain: 3,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //chest, bludgeoning, l2
       stun: 2,
       pain: 6,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //chest, bludgeoning, l3
       stun: 3,
       pain: 8,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //chest, bludgeoning, l4
       stun: 5,
       pain: 12,
       bleed: 8,
-      special: []
+      special: [],
+      description:""
     },
     { //chest, bludgeoning, l5
       stun: "total",
       pain: "total",
       bleed: 15,
-      special: []
+      special: [],
+      description:""
     }
   ],
   [ //unarmed
@@ -773,31 +888,36 @@ var table = [
       stun: 0,
       pain: 0,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //chest, unarmed, l2
       stun: 0,
       pain: 1,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //chest, unarmed, l3
       stun: 1,
       pain: 2,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //chest, unarmed, l4
       stun: 2,
       pain: 5,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //chest, unarmed, l5
       stun: 3,
       pain: 15,
       bleed: 5,
-      special: []
+      special: [],
+      description:""
     }
   ]
 ],
@@ -807,31 +927,36 @@ var table = [
       stun: 0,
       pain: 6,
       bleed: 2,
-      special: []
+      special: [],
+      description:""
     },
     { //side, cutting, l2
       stun: 1,
       pain: 7,
       bleed: 4,
-      special: []
+      special: [],
+      description:""
     },
     { //side, cutting, l3
       stun: 2,
       pain: 12,
       bleed: 6,
-      special: []
+      special: [],
+      description:""
     },
     { //side, cutting, l4
       stun: 3,
       pain: 20,
       bleed: 20,
-      special: []
+      special: [],
+      description:""
     },
     { //side, cutting, l5
       stun: "dead",
       pain: "dead",
       bleed: "dead",
-      special: []
+      special: [],
+      description:""
     }
   ],
   [ //piercing
@@ -839,31 +964,36 @@ var table = [
       stun: 0,
       pain: 4,
       bleed: 4,
-      special: []
+      special: [],
+      description:""
     },
     { //side, piercing, l2
       stun: 1,
       pain: 5,
       bleed: 6,
-      special: []
+      special: [],
+      description:""
     },
     { //side, piercing, l3
       stun: 2,
       pain: 9,
       bleed: 9,
-      special: []
+      special: [],
+      description:""
     },
     { //side, piercing, l4
       stun: 3,
       pain: 12,
       bleed: 14,
-      special: []
+      special: [],
+      description:""
     },
     { //side, piercing, l5
       stun: 5,
       pain: 16,
       bleed: 18,
-      special: []
+      special: [],
+      description:""
     }
   ],
   [ //bludgeoning
@@ -871,31 +1001,36 @@ var table = [
       stun: 2,
       pain: 4,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //side, bludgeoning, l2
       stun: 4,
       pain: 5,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //side, bludgeoning, l3
       stun: 6,
       pain: 7,
       bleed: 1,
-      special: []
+      special: [],
+      description:""
     },
     { //side, bludgeoning, l4
       stun: 8,
       pain: 12,
       bleed: 5,
-      special: []
+      special: [],
+      description:""
     },
     { //side, bludgeoning, l5
       stun: "total",
       pain: "total",
       bleed: 25,
-      special: []
+      special: [],
+      description:""
     }
   ],
   [ //unarmed
@@ -903,31 +1038,36 @@ var table = [
       stun: 1,
       pain: 0,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //side, unarmed, l2
       stun: 1,
       pain: 1,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //side, unarmed, l3
       stun: 8,
       pain: 8,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //side, unarmed, l4
       stun: 15,
       pain: 10,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //side, unarmed, l5
       stun: 20,
       pain: 15,
       bleed: 3,
-      special: []
+      special: [],
+      description:""
     }
   ]
 ],
@@ -937,31 +1077,36 @@ var table = [
       stun: 1,
       pain: 5,
       bleed: 1,
-      special: []
+      special: [],
+      description:""
     },
     { //belly, cutting, l2
       stun: 3,
       pain: 8,
       bleed: 4,
-      special: []
+      special: [],
+      description:""
     },
     { //belly, cutting, l3
       stun: 4,
       pain: 10,
       bleed: 10,
-      special: []
+      special: [],
+      description:""
     },
     { //belly, cutting, l4
       stun: 5,
       pain: 15,
       bleed: 15,
-      special: []
+      special: [],
+      description:""
     },
     { //belly, cutting, l5
       stun: "dead",
       pain: "dead",
       bleed: "dead",
-      special: []
+      special: [],
+      description:""
     }
   ],
   [ //piercing
@@ -969,31 +1114,36 @@ var table = [
       stun: 1,
       pain: 4,
       bleed: 3,
-      special: []
+      special: [],
+      description:""
     },
     { //belly, piercing, l2
       stun: 3,
       pain: 6,
       bleed: 6,
-      special: []
+      special: [],
+      description:""
     },
     { //belly, piercing, l3
       stun: 5,
       pain: 12,
       bleed: 10,
-      special: []
+      special: [],
+      description:""
     },
     { //belly, piercing, l4
       stun: 7,
       pain: 14,
       bleed: 20,
-      special: []
+      special: [],
+      description:""
     },
     { //belly, piercing, l5
       stun: "dead",
       pain: "dead",
       bleed: "dead",
-      special: []
+      special: [],
+      description:""
     }
   ],
   [ //bludgeoning
@@ -1001,31 +1151,36 @@ var table = [
       stun: 3,
       pain: 4,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //belly, bludgeoning, l2
       stun: 6,
       pain: 5,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //belly, bludgeoning, l3
       stun: 9,
       pain: 6,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //belly, bludgeoning, l4
       stun: 11,
       pain: 7,
       bleed: 3,
-      special: []
+      special: [],
+      description:""
     },
     { //belly, bludgeoning, l5
       stun: 15,
       pain: 8,
       bleed: 3,
-      special: []
+      special: [],
+      description:""
     }
   ],
   [ //unarmed
@@ -1033,31 +1188,36 @@ var table = [
       stun: 1,
       pain: 0,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //belly, unarmed, l2
       stun: 3,
       pain: 3,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //belly, unarmed, l3
       stun: 5,
       pain: 5,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //belly, unarmed, l4
       stun: 7,
       pain: 7,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //belly, unarmed, l5
       stun: 9,
       pain: 12,
       bleed: 3,
-      special: []
+      special: [],
+      description:""
     }
   ]
 ],
@@ -1067,31 +1227,36 @@ var table = [
       stun: 1,
       pain: 5,
       bleed: 1,
-      special: []
+      special: [],
+      description:""
     },
     { //hip, cutting, l2
       stun: 2,
       pain: 7,
       bleed: 2,
-      special: []
+      special: [],
+      description:""
     },
     { //hip, cutting, l3
       stun: 3,
       pain: 12,
       bleed: 5,
-      special: []
+      special: [],
+      description:""
     },
     { //hip, cutting, l4
       stun: 4,
       pain: 16,
       bleed: 10,
-      special: []
+      special: [],
+      description:""
     },
     { //hip, cutting, l5
       stun: 5,
       pain: 20,
       bleed: 20,
-      special: []
+      special: [],
+      description:""
     }
   ],
   [ //piercing
@@ -1099,31 +1264,36 @@ var table = [
       stun: 1,
       pain: 4,
       bleed: 1,
-      special: []
+      special: [],
+      description:""
     },
     { //hip, piercing, l2
       stun: 2,
       pain: 6,
       bleed: 3,
-      special: []
+      special: [],
+      description:""
     },
     { //hip, piercing, l3
       stun: 3,
       pain: 10,
       bleed: 6,
-      special: []
+      special: [],
+      description:""
     },
     { //hip, piercing, l4
       stun: 4,
       pain: 12,
       bleed: 8,
-      special: []
+      special: [],
+      description:""
     },
     { //hip, piercing, l5
       stun: 5,
       pain: 14,
       bleed: 12,
-      special: []
+      special: [],
+      description:""
     }
   ],
   [ //bludgeoning
@@ -1131,31 +1301,36 @@ var table = [
       stun: 2,
       pain: 3,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //hip, bludgeoning, l2
       stun: 3,
       pain: 5,
       bleed: 1,
-      special: []
+      special: [],
+      description:""
     },
     { //hip, bludgeoning, l3
       stun: 5,
       pain: 10,
       bleed: 3,
-      special: []
+      special: [],
+      description:""
     },
     { //hip, bludgeoning, l4
       stun: 6,
       pain: 12,
       bleed: 5,
-      special: []
+      special: [],
+      description:""
     },
     { //hip, bludgeoning, l5
       stun: 8,
       pain: 18,
       bleed: 7,
-      special: []
+      special: [],
+      description:""
     }
   ],
   [ //unarmed
@@ -1163,31 +1338,36 @@ var table = [
       stun: 0,
       pain: 0,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //hip, unarmed, l2
       stun: 0,
       pain: 0,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //hip, unarmed, l3
       stun: 1,
       pain: 1,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //hip, unarmed, l4
       stun: 2,
       pain: 3,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //hip, unarmed, l5
       stun: 3,
       pain: 6,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     }
   ]
 ],
@@ -1197,31 +1377,36 @@ var table = [
       stun: 2,
       pain: 6,
       bleed: 2,
-      special: []
+      special: [],
+      description:""
     },
     { //groin, cutting, l2
       stun: 3,
       pain: 9,
       bleed: 5,
-      special: []
+      special: [],
+      description:""
     },
     { //groin, cutting, l3
       stun: 5,
       pain: 15,
       bleed: 8,
-      special: []
+      special: [],
+      description:""
     },
     { //groin, cutting, l4
       stun: "total",
       pain: "total",
       bleed: 20,
-      special: []
+      special: [],
+      description:""
     },
     { //groin, cutting, l5
       stun: "dead",
       pain: "dead",
       bleed: "dead",
-      special: []
+      special: [],
+      description:""
     }
   ],
   [ //piercing
@@ -1229,31 +1414,36 @@ var table = [
       stun: 2,
       pain: 5,
       bleed: 4,
-      special: []
+      special: [],
+      description:""
     },
     { //groin, piercing, l2
       stun: 3,
       pain: 7,
       bleed: 8,
-      special: []
+      special: [],
+      description:""
     },
     { //groin, piercing, l3
       stun: 4,
       pain: 12,
       bleed: 15,
-      special: []
+      special: [],
+      description:""
     },
     { //groin, piercing, l4
       stun: "total",
       pain: "total",
       bleed: 25,
-      special: []
+      special: [],
+      description:""
     },
     { //groin, piercing, l5
       stun: "dead",
       pain: "dead",
       bleed: "dead",
-      special: []
+      special: [],
+      description:""
     }
   ],
   [ //bludgeoning
@@ -1261,31 +1451,36 @@ var table = [
       stun: 4,
       pain: 5,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //groin, bludgeoning, l2
       stun: 6,
       pain: 6,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //groin, bludgeoning, l3
       stun: 8,
       pain: 10,
       bleed: 3,
-      special: []
+      special: [],
+      description:""
     },
     { //groin, bludgeoning, l4
       stun: "total",
       pain: "total",
       bleed: 8,
-      special: []
+      special: [],
+      description:""
     },
     { //groin, bludgeoning, l5
       stun: "total",
       pain: "total",
       bleed: 15,
-      special: []
+      special: [],
+      description:""
     }
   ],
   [ //unarmed
@@ -1293,31 +1488,36 @@ var table = [
       stun: 2,
       pain: 3,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //groin, unarmed, l2
       stun: 4,
       pain: 5,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //groin, unarmed, l3
       stun: 6,
       pain: 8,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //groin, unarmed, l4
       stun: 8,
       pain: 12,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //groin, unarmed, l5
       stun: "total",
       pain: "total",
       bleed: 3,
-      special: []
+      special: [],
+      description:""
     }
   ]
 ],
@@ -1327,31 +1527,36 @@ var table = [
       stun: 1,
       pain: 4,
       bleed: 2,
-      special: []
+      special: [],
+      description:""
     },
     { //thigh, cutting, l2
       stun: 3,
       pain: 5,
       bleed: 4,
-      special: []
+      special: [],
+      description:""
     },
     { //thigh, cutting, l3
       stun: 3,
       pain: 12,
       bleed: 10,
-      special: []
+      special: [],
+      description:""
     },
     { //thigh, cutting, l4
       stun: 4,
       pain: 15,
       bleed: 20,
-      special: []
+      special: [],
+      description:""
     },
     { //thigh, cutting, l5
       stun: "total",
       pain: "total",
       bleed: 25,
-      special: []
+      special: [],
+      description:""
     }
   ],
   [ //piercing
@@ -1359,31 +1564,36 @@ var table = [
       stun: 1,
       pain: 3,
       bleed: 4,
-      special: []
+      special: [],
+      description:""
     },
     { //thigh, piercing, l2
       stun: 2,
       pain: 5,
       bleed: 6,
-      special: []
+      special: [],
+      description:""
     },
     { //thigh, piercing, l3
       stun: 3,
       pain: 10,
       bleed: 10,
-      special: []
+      special: [],
+      description:""
     },
     { //thigh, piercing, l4
       stun: 4,
       pain: 12,
       bleed: 15,
-      special: []
+      special: [],
+      description:""
     },
     { //thigh, piercing, l5
       stun: 5,
       pain: 14,
       bleed: 20,
-      special: []
+      special: [],
+      description:""
     }
   ],
   [ //bludgeoning
@@ -1391,31 +1601,36 @@ var table = [
       stun: 2,
       pain: 0,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //thigh, bludgeoning, l2
       stun: 4,
       pain: 2,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //thigh, bludgeoning, l3
       stun: 6,
       pain: 4,
       bleed: 1,
-      special: []
+      special: [],
+      description:""
     },
     { //thigh, bludgeoning, l4
       stun: 8,
       pain: 10,
       bleed: 3,
-      special: []
+      special: [],
+      description:""
     },
     { //thigh, bludgeoning, l5
       stun: 10,
       pain: 20,
       bleed: 5,
-      special: []
+      special: [],
+      description:""
     }
   ],
   [ //unarmed
@@ -1423,31 +1638,36 @@ var table = [
       stun: 0,
       pain: 0,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //thigh, unarmed, l2
       stun: 0,
       pain: 0,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //thigh, unarmed, l3
       stun: 0,
       pain: 1,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //thigh, unarmed, l4
       stun: 1,
       pain: 2,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //thigh, unarmed, l5
       stun: 2,
       pain: 10,
       bleed: 3,
-      special: []
+      special: [],
+      description:""
     }
   ]
 ],
@@ -1457,31 +1677,36 @@ var table = [
       stun: 1,
       pain: 6,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //knee, cutting, l2
       stun: 1,
       pain: 8,
       bleed: 1,
-      special: []
+      special: [],
+      description:""
     },
     { //knee, cutting, l3
       stun: 3,
       pain: 10,
       bleed: 2,
-      special: []
+      special: [],
+      description:""
     },
     { //knee, cutting, l4
       stun: 5,
       pain: 15,
       bleed: 3,
-      special: []
+      special: [],
+      description:""
     },
     { //knee, cutting, l5
       stun: "total",
       pain: "total",
       bleed: 20,
-      special: []
+      special: [],
+      description:""
     }
   ],
   [ //piercing
@@ -1489,31 +1714,36 @@ var table = [
       stun: 1,
       pain: 5,
       bleed: 2,
-      special: []
+      special: [],
+      description:""
     },
     { //knee, piercing, l2
       stun: 1,
       pain: 7,
       bleed: 4,
-      special: []
+      special: [],
+      description:""
     },
     { //knee, piercing, l3
       stun: 2,
       pain: 9,
       bleed: 7,
-      special: []
+      special: [],
+      description:""
     },
     { //knee, piercing, l4
       stun: 3,
       pain: 16,
       bleed: 12,
-      special: []
+      special: [],
+      description:""
     },
     { //knee, piercing, l5
       stun: 8,
       pain: 20,
       bleed: 15,
-      special: []
+      special: [],
+      description:""
     }
   ],
   [ //bludgeoning
@@ -1521,31 +1751,36 @@ var table = [
       stun: 2,
       pain: 3,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //knee, bludgeoning, l2
       stun: 4,
       pain: 5,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //knee, bludgeoning, l3
       stun: 6,
       pain: 7,
       bleed: 2,
-      special: []
+      special: [],
+      description:""
     },
     { //knee, bludgeoning, l4
       stun: 8,
       pain: 10,
       bleed: 3,
-      special: []
+      special: [],
+      description:""
     },
     { //knee, bludgeoning, l5
       stun: "total",
       pain: 18,
       bleed: 5,
-      special: []
+      special: [],
+      description:""
     }
   ],
   [ //unarmed
@@ -1553,31 +1788,36 @@ var table = [
       stun: 0,
       pain: 0,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //knee, unarmed, l2
       stun: 1,
       pain: 0,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //knee, unarmed, l3
       stun: 2,
       pain: 5,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //knee, unarmed, l4
       stun: 3,
       pain: 10,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //knee, unarmed, l5
       stun: 8,
       pain: 18,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     }
   ]
 ],
@@ -1587,31 +1827,36 @@ var table = [
       stun: 1,
       pain: 5,
       bleed: 1,
-      special: []
+      special: [],
+      description:""
     },
     { //shin, cutting, l2
       stun: 2,
       pain: 7,
       bleed: 4,
-      special: []
+      special: [],
+      description:""
     },
     { //shin, cutting, l3
       stun: 3,
       pain: 9,
       bleed: 7,
-      special: []
+      special: [],
+      description:""
     },
     { //shin, cutting, l4
       stun: 4,
       pain: 14,
       bleed: 10,
-      special: []
+      special: [],
+      description:""
     },
     { //shin, cutting, l5
       stun: 5,
       pain: 20,
       bleed: 15,
-      special: []
+      special: [],
+      description:""
     }
   ],
   [ //piercing
@@ -1619,31 +1864,36 @@ var table = [
       stun: 1,
       pain: 4,
       bleed: 2,
-      special: []
+      special: [],
+      description:""
     },
     { //shin, piercing, l2
       stun: 2,
       pain: 6,
       bleed: 5,
-      special: []
+      special: [],
+      description:""
     },
     { //shin, piercing, l3
       stun: 3,
       pain: 8,
       bleed: 8,
-      special: []
+      special: [],
+      description:""
     },
     { //shin, piercing, l4
       stun: 4,
       pain: 10,
       bleed: 10,
-      special: []
+      special: [],
+      description:""
     },
     { //shin, piercing, l5
       stun: 5,
       pain: 20,
       bleed: 17,
-      special: []
+      special: [],
+      description:""
     }
   ],
   [ //bludgeoning
@@ -1651,31 +1901,36 @@ var table = [
       stun: 2,
       pain: 4,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //shin, bludgeoning, l2
       stun: 3,
       pain: 6,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //shin, bludgeoning, l3
       stun: 5,
       pain: 8,
       bleed: 3,
-      special: []
+      special: [],
+      description:""
     },
     { //shin, bludgeoning, l4
       stun: 7,
       pain: 14,
       bleed: 5,
-      special: []
+      special: [],
+      description:""
     },
     { //shin, bludgeoning, l5
       stun: 9,
       pain: 16,
       bleed: 10,
-      special: []
+      special: [],
+      description:""
     }
   ],
   [ //unarmed
@@ -1683,31 +1938,36 @@ var table = [
       stun: 0,
       pain: 0,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //shin, unarmed, l2
       stun: 1,
       pain: 0,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //shin, unarmed, l3
       stun: 2,
       pain: 5,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //shin, unarmed, l4
       stun: 3,
       pain: 8,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //shin, unarmed, l5
       stun: 6,
       pain: 14,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     }
   ]
 ],
@@ -1717,31 +1977,36 @@ var table = [
       stun: 1,
       pain: 4,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //foot, cutting, l2
       stun: 2,
       pain: 5,
       bleed: 1,
-      special: []
+      special: [],
+      description:""
     },
     { //foot, cutting, l3
       stun: 3,
       pain: 6,
       bleed: 1,
-      special: []
+      special: [],
+      description:""
     },
     { //foot, cutting, l4
       stun: 4,
       pain: 10,
       bleed: 3,
-      special: []
+      special: [],
+      description:""
     },
     { //foot, cutting, l5
       stun: 5,
       pain: 12,
       bleed: 10,
-      special: []
+      special: [],
+      description:""
     }
   ],
   [ //piercing
@@ -1749,31 +2014,36 @@ var table = [
       stun: 1,
       pain: 2,
       bleed: 2,
-      special: []
+      special: [],
+      description:""
     },
     { //foot, piercing, l2
       stun: 2,
       pain: 5,
       bleed: 3,
-      special: []
+      special: [],
+      description:""
     },
     { //foot, piercing, l3
       stun: 3,
       pain: 10,
       bleed: 4,
-      special: []
+      special: [],
+      description:""
     },
     { //foot, piercing, l4
       stun: 4,
       pain: 12,
       bleed: 5,
-      special: []
+      special: [],
+      description:""
     },
     { //foot, piercing, l5
       stun: 5,
       pain: 18,
       bleed: 7,
-      special: []
+      special: [],
+      description:""
     }
   ],
   [ //bludgeoning
@@ -1781,31 +2051,36 @@ var table = [
       stun: 2,
       pain: 2,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //foot, bludgeoning, l2
       stun: 3,
       pain: 3,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //foot, bludgeoning, l3
       stun: 5,
       pain: 7,
       bleed: 2,
-      special: []
+      special: [],
+      description:""
     },
     { //foot, bludgeoning, l4
       stun: 7,
       pain: 10,
       bleed: 3,
-      special: []
+      special: [],
+      description:""
     },
     { //foot, bludgeoning, l5
       stun: 9,
       pain: 18,
       bleed: 5,
-      special: []
+      special: [],
+      description:""
     }
   ],
   [ //unarmed
@@ -1813,31 +2088,36 @@ var table = [
       stun: 0,
       pain: 0,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //foot, unarmed, l2
       stun: 0,
       pain: 1,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //foot, unarmed, l3
       stun: 1,
       pain: 3,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //foot, unarmed, l4
       stun: 2,
       pain: 7,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //foot, unarmed, l5
       stun: 3,
       pain: 10,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     }
   ]
 ],
@@ -1847,31 +2127,36 @@ var table = [
       stun: 1,
       pain: 4,
       bleed: 1,
-      special: []
+      special: [],
+      description:""
     },
     { //upper arm, cutting, l2
       stun: 2,
       pain: 7,
       bleed: 2,
-      special: []
+      special: [],
+      description:""
     },
     { //upper arm, cutting, l3
       stun: 3,
       pain: 10,
       bleed: 3,
-      special: []
+      special: [],
+      description:""
     },
     { //upper arm, cutting, l4
       stun: 4,
       pain: 14,
       bleed: 6,
-      special: []
+      special: [],
+      description:""
     },
     { //upper arm, cutting, l5
       stun: 5,
       pain: 15,
       bleed: 20,
-      special: []
+      special: [],
+      description:""
     }
   ],
   [ //piercing
@@ -1879,31 +2164,36 @@ var table = [
       stun: 1,
       pain: 4,
       bleed: 2,
-      special: []
+      special: [],
+      description:""
     },
     { //upper arm, piercing, l2
       stun: 2,
       pain: 5,
       bleed: 3,
-      special: []
+      special: [],
+      description:""
     },
     { //upper arm, piercing, l3
       stun: 3,
       pain: 8,
       bleed: 5,
-      special: []
+      special: [],
+      description:""
     },
     { //upper arm, piercing, l4
       stun: 4,
       pain: 12,
       bleed: 8,
-      special: []
+      special: [],
+      description:""
     },
     { //upper arm, piercing, l5
       stun: 5,
       pain: 15,
       bleed: 15,
-      special: []
+      special: [],
+      description:""
     }
   ],
   [ //bludgeoning
@@ -1911,31 +2201,36 @@ var table = [
       stun: 2,
       pain: 2,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //upper arm, bludgeoning, l2
       stun: 3,
       pain: 3,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //upper arm, bludgeoning, l3
       stun: 5,
       pain: 5,
       bleed: 1,
-      special: []
+      special: [],
+      description:""
     },
     { //upper arm, bludgeoning, l4
       stun: 7,
       pain: 9,
       bleed: 2,
-      special: []
+      special: [],
+      description:""
     },
     { //upper arm, bludgeoning, l5
       stun: 9,
       pain: 12,
       bleed: 5,
-      special: []
+      special: [],
+      description:""
     }
   ],
   [ //unarmed
@@ -1943,31 +2238,36 @@ var table = [
       stun: 0,
       pain: 0,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //upper arm, unarmed, l2
       stun: 1,
       pain: 0,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //upper arm, unarmed, l3
       stun: 2,
       pain: 2,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //upper arm, unarmed, l4
       stun: 3,
       pain: 3,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //upper arm, unarmed, l5
       stun: 4,
       pain: 5,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     }
   ]
 ],
@@ -1977,31 +2277,36 @@ var table = [
       stun: 1,
       pain: 5,
       bleed: 1,
-      special: []
+      special: [],
+      description:""
     },
     { //elbow, cutting, l2
       stun: 2,
       pain: 6,
       bleed: 3,
-      special: []
+      special: [],
+      description:""
     },
     { //elbow, cutting, l3
       stun: 3,
       pain: 8,
       bleed: 5,
-      special: []
+      special: [],
+      description:""
     },
     { //elbow, cutting, l4
       stun: 4,
       pain: 12,
       bleed: 7,
-      special: []
+      special: [],
+      description:""
     },
     { //elbow, cutting, l5
       stun: 5,
       pain: 20,
       bleed: 20,
-      special: []
+      special: [],
+      description:""
     }
   ],
   [ //piercing
@@ -2009,31 +2314,36 @@ var table = [
       stun: 1,
       pain: 4,
       bleed: 3,
-      special: []
+      special: [],
+      description:""
     },
     { //elbow, piercing, l2
       stun: 2,
       pain: 6,
       bleed: 6,
-      special: []
+      special: [],
+      description:""
     },
     { //elbow, piercing, l3
       stun: 3,
       pain: 10,
       bleed: 10,
-      special: []
+      special: [],
+      description:""
     },
     { //elbow, piercing, l4
       stun: 4,
       pain: 14,
       bleed: 14,
-      special: []
+      special: [],
+      description:""
     },
     { //elbow, piercing, l5
       stun: 5,
       pain: 18,
       bleed: 20,
-      special: []
+      special: [],
+      description:""
     }
   ],
   [ //bludgeoning
@@ -2041,31 +2351,36 @@ var table = [
       stun: 2,
       pain: 4,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //elbow, bludgeoning, l2
       stun: 4,
       pain: 6,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //elbow, bludgeoning, l3
       stun: 6,
       pain: 10,
       bleed: 1,
-      special: []
+      special: [],
+      description:""
     },
     { //elbow, bludgeoning, l4
       stun: 8,
       pain: 14,
       bleed: 3,
-      special: []
+      special: [],
+      description:""
     },
     { //elbow, bludgeoning, l5
       stun: 10,
       pain: 18,
       bleed: 6,
-      special: []
+      special: [],
+      description:""
     }
   ],
   [ //unarmed
@@ -2073,31 +2388,36 @@ var table = [
       stun: 0,
       pain: 0,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //elbow, unarmed, l2
       stun: 0,
       pain: 0,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //elbow, unarmed, l3
       stun: 1,
       pain: 0,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //elbow, unarmed, l4
       stun: 2,
       pain: 2,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //elbow, unarmed, l5
       stun: 3,
       pain: 5,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     }
   ]
 ],
@@ -2107,31 +2427,36 @@ var table = [
       stun: 1,
       pain: 3,
       bleed: 1,
-      special: []
+      special: [],
+      description:""
     },
     { //forearm, cutting, l2
       stun: 2,
       pain: 6,
       bleed: 3,
-      special: []
+      special: [],
+      description:""
     },
     { //forearm, cutting, l3
       stun: 3,
       pain: 10,
       bleed: 6,
-      special: []
+      special: [],
+      description:""
     },
     { //forearm, cutting, l4
       stun: 4,
       pain: 15,
       bleed: 8,
-      special: []
+      special: [],
+      description:""
     },
     { //forearm, cutting, l5
       stun: 5,
       pain: 20,
       bleed: 20,
-      special: []
+      special: [],
+      description:""
     }
   ],
   [ //piercing
@@ -2139,31 +2464,36 @@ var table = [
       stun: 1,
       pain: 2,
       bleed: 2,
-      special: []
+      special: [],
+      description:""
     },
     { //forearm, piercing, l2
       stun: 2,
       pain: 5,
       bleed: 5,
-      special: []
+      special: [],
+      description:""
     },
     { //forearm, piercing, l3
       stun: 3,
       pain: 7,
       bleed: 10,
-      special: []
+      special: [],
+      description:""
     },
     { //forearm, piercing, l4
       stun: 4,
       pain: 9,
       bleed: 14,
-      special: []
+      special: [],
+      description:""
     },
     { //forearm, piercing, l5
       stun: 5,
       pain: 12,
       bleed: 18,
-      special: []
+      special: [],
+      description:""
     }
   ],
   [ //bludgeoning
@@ -2171,31 +2501,36 @@ var table = [
       stun: 2,
       pain: 2,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //forearm, bludgeoning, l2
       stun: 4,
       pain: 4,
       bleed: 1,
-      special: []
+      special: [],
+      description:""
     },
     { //forearm, bludgeoning, l3
       stun: 6,
       pain: 10,
       bleed: 3,
-      special: []
+      special: [],
+      description:""
     },
     { //forearm, bludgeoning, l4
       stun: 8,
       pain: 14,
       bleed: 6,
-      special: []
+      special: [],
+      description:""
     },
     { //forearm, bludgeoning, l5
       stun: 10,
       pain: 15,
       bleed: 10,
-      special: []
+      special: [],
+      description:""
     }
   ],
   [ //unarmed
@@ -2203,31 +2538,36 @@ var table = [
       stun: 0,
       pain: 0,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //forearm, unarmed, l2
       stun: 1,
       pain: 0,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //forearm, unarmed, l3
       stun: 2,
       pain: 1,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //forearm, unarmed, l4
       stun: 3,
       pain: 2,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //forearm, unarmed, l5
       stun: 5,
       pain: 8,
       bleed: 3,
-      special: []
+      special: [],
+      description:""
     }
   ]
 ],
@@ -2237,31 +2577,36 @@ var table = [
       stun: 1,
       pain: 4,
       bleed: 1,
-      special: []
+      special: [],
+      description:""
     },
     { //hand, cutting, l2
       stun: 2,
       pain: 6,
       bleed: 3,
-      special: []
+      special: [],
+      description:""
     },
     { //hand, cutting, l3
       stun: 3,
       pain: 9,
       bleed: 5,
-      special: []
+      special: [],
+      description:""
     },
     { //hand, cutting, l4
       stun: 4,
       pain: 12,
       bleed: 8,
-      special: []
+      special: [],
+      description:""
     },
     { //hand, cutting, l5
       stun: 5,
       pain: 15,
       bleed: 15,
-      special: []
+      special: [],
+      description:""
     }
   ],
   [ //piercing
@@ -2269,31 +2614,36 @@ var table = [
       stun: 1,
       pain: 3,
       bleed: 1,
-      special: []
+      special: [],
+      description:""
     },
     { //hand, piercing, l2
       stun: 2,
       pain: 4,
       bleed: 2,
-      special: []
+      special: [],
+      description:""
     },
     { //hand, piercing, l3
       stun: 3,
       pain: 6,
       bleed: 4,
-      special: []
+      special: [],
+      description:""
     },
     { //hand, piercing, l4
       stun: 4,
       pain: 10,
       bleed: 14,
-      special: []
+      special: [],
+      description:""
     },
     { //hand, piercing, l5
       stun: 5,
       pain: 15,
       bleed: 18,
-      special: []
+      special: [],
+      description:""
     }
   ],
   [ //bludgeoning
@@ -2301,7 +2651,8 @@ var table = [
       stun: 2,
       pain: 3,
       bleed: 1,
-      special: []
+      special: [],
+      description:""
     },
     { //hand, bludgeoning, l2
       stun: 4,
@@ -2313,19 +2664,22 @@ var table = [
       stun: 6,
       pain: 6,
       bleed: 2,
-      special: []
+      special: [],
+      description:""
     },
     { //hand, bludgeoning, l4
       stun: 8,
       pain: 8,
       bleed: 3,
-      special: []
+      special: [],
+      description:""
     },
     { //hand, bludgeoning, l5
       stun: 10,
       pain: 12,
       bleed: 8,
-      special: []
+      special: [],
+      description:""
     }
   ],
   [ //unarmed
@@ -2333,31 +2687,36 @@ var table = [
       stun: 0,
       pain: 0,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //hand, unarmed, l2
       stun: 0,
       pain: 0,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //hand, unarmed, l3
       stun: 2,
       pain: 1,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //hand, unarmed, l4
       stun: 5,
       pain: 5,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //hand, unarmed, l5
       stun: 10,
       pain: 10,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     }
   ]
 ],
@@ -2367,31 +2726,36 @@ var table = [
       stun: 1,
       pain: 2,
       bleed: 2,
-      special: []
+      special: [],
+      description:""
     },
     { //upper back, cutting, l2
       stun: 3,
       pain: 8,
       bleed: 4,
-      special: []
+      special: [],
+      description:""
     },
     { //upper back, cutting, l3
       stun: 4,
       pain: 12,
       bleed: 6,
-      special: []
+      special: [],
+      description:""
     },
     { //upper back, cutting, l4
       stun: 8,
       pain: 20,
       bleed: 10,
-      special: []
+      special: [],
+      description:""
     },
     { //upper back, cutting, l5
       stun: "dead",
       pain: "dead",
       bleed: "dead",
-      special: []
+      special: [],
+      description:""
     }
   ],
   [ //piercing
@@ -2399,31 +2763,36 @@ var table = [
       stun: 1,
       pain: 3,
       bleed: 2,
-      special: []
+      special: [],
+      description:""
     },
     { //upper back, piercing, l2
       stun: 3,
       pain: 4,
       bleed: 4,
-      special: []
+      special: [],
+      description:""
     },
     { //upper back, piercing, l3
       stun: 5,
       pain: 9,
       bleed: 8,
-      special: []
+      special: [],
+      description:""
     },
     { //upper back, piercing, l4
       stun: 7,
       pain: 13,
       bleed: 20,
-      special: []
+      special: [],
+      description:""
     },
     { //upper back, piercing, l5
       stun: "dead",
       pain: "dead",
       bleed: "dead",
-      special: []
+      special: [],
+      description:""
     }
   ],
   [ //bludgeoning
@@ -2431,31 +2800,36 @@ var table = [
       stun: 2,
       pain: 4,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //upper back, bludgeoning, l2
       stun: 5,
       pain: 5,
       bleed: 1,
-      special: []
+      special: [],
+      description:""
     },
     { //upper back, bludgeoning, l3
       stun: 9,
       pain: 8,
       bleed: 2,
-      special: []
+      special: [],
+      description:""
     },
     { //upper back, bludgeoning, l4
       stun: 11,
       pain: 12,
       bleed: 3,
-      special: []
+      special: [],
+      description:""
     },
     { //upper back, bludgeoning, l5
       stun: "dead",
       pain: "dead",
       bleed: "dead",
-      special: []
+      special: [],
+      description:""
     }
   ],
   [ //unarmed
@@ -2463,31 +2837,36 @@ var table = [
       stun: 0,
       pain: 0,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //upper back, unarmed, l2
       stun: 1,
       pain: 0,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //upper back, unarmed, l3
       stun: 3,
       pain: 1,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //upper back, unarmed, l4
       stun: 5,
       pain: 2,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //upper back, unarmed, l5
       stun: 10,
       pain: 5,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     }
   ]
 ],
@@ -2497,31 +2876,36 @@ var table = [
       stun: 1,
       pain: 5,
       bleed: 1,
-      special: []
+      special: [],
+      description:""
     },
     { //lower back, cutting, l2
       stun: 2,
       pain: 8,
       bleed: 5,
-      special: []
+      special: [],
+      description:""
     },
     { //lower back, cutting, l3
       stun: 3,
       pain: 10,
       bleed: 7,
-      special: []
+      special: [],
+      description:""
     },
     { //lower back, cutting, l4
       stun: 8,
       pain: 15,
       bleed: 15,
-      special: []
+      special: [],
+      description:""
     },
     { //lower back, cutting, l5
       stun: "dead",
       pain: "dead",
       bleed: "dead",
-      special: []
+      special: [],
+      description:""
     }
   ],
   [ //piercing
@@ -2529,31 +2913,36 @@ var table = [
       stun: 1,
       pain: 5,
       bleed: 3,
-      special: []
+      special: [],
+      description:""
     },
     { //lower back, piercing, l2
       stun: 3,
       pain: 4,
       bleed: 6,
-      special: []
+      special: [],
+      description:""
     },
     { //lower back, piercing, l3
       stun: 4,
       pain: 10,
       bleed: 10,
-      special: []
+      special: [],
+      description:""
     },
     { //lower back, piercing, l4
       stun: 7,
       pain: 12,
       bleed: 20,
-      special: []
+      special: [],
+      description:""
     },
     { //lower back, piercing, l5
       stun: "dead",
       pain: "dead",
       bleed: "dead",
-      special: []
+      special: [],
+      description:""
     }
   ],
   [ //bludgeoning
@@ -2561,31 +2950,36 @@ var table = [
       stun: 2,
       pain: 4,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //lower back, bludgeoning, l2
       stun: 4,
       pain: 5,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //lower back, bludgeoning, l3
       stun: 6,
       pain: 6,
       bleed: 1,
-      special: []
+      special: [],
+      description:""
     },
     { //lower back, bludgeoning, l4
       stun: 10,
       pain: 7,
       bleed: 3,
-      special: []
+      special: [],
+      description:""
     },
     { //lower back, bludgeoning, l5
       stun: "dead",
       pain: "dead",
       bleed: "dead",
-      special: []
+      special: [],
+      description:""
     }
   ],
   [ //unarmed
@@ -2593,31 +2987,36 @@ var table = [
       stun: 2,
       pain: 1,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //lower back, unarmed, l2
       stun: 3,
       pain: 2,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //lower back, unarmed, l3
       stun: 6,
       pain: 3,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //lower back, unarmed, l4
       stun: 8,
       pain: 4,
       bleed: 0,
-      special: []
+      special: [],
+      description:""
     },
     { //lower back, unarmed, l5
       stun: 10,
       pain: 5,
       bleed: 1,
-      special: []
+      special: [],
+      description:""
     }
   ]
 ]
